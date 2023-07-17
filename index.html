@@ -4,8 +4,298 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Helen Lin</title>
+   <link rel="icon" href="assets/favicon.ico">
+   <style>
+      th,td {
+         border: 1px solid black;
+      }
+   </style>
 </head>
 <body>
-   <h1> Home Page</h1>
+   <header>
+      <svg width="3.2em" height="3.2em">
+
+      <circle cx="1.6em" cy="1.6em" r="1.5em" fill="#ADF"/>
+
+      <text x="1.1em" y="1.4em" font-size="1.5em" text-anchor="middle" fill="black">HZL</text>
+
+      </svg>
+
+      <nav>
+         <ul>
+            <li><a href="experience/">Experience</a></li>
+            <li><a href="projects/">Projects</a></li>
+            <li><a href="about/">About</a></li>
+            <li><a href="contact/">Contact</a></li>
+            <li><a href="resume.pdf">Resume</a></li>
+         </ul>
+      </nav>
+   </header>
+
+   <main>
+      <section>
+         <h1>Helen Lin</h1>
+         <p>Hi, I am Helen Lin, a student at <em> UC San Diego</em> studying 
+            <em>Mathematics-Computer Science</em> with a minor in <em>Finance</em></p>
+
+         <div>
+            <span><a href="about/"> About Me</a></span>
+               
+            <span> <a href="resume.pdf"> View Resume </a></span>
+
+         </div>
+      </section>
+
+      <hr>
+
+      <section>
+         <h2> Experience</h2>
+         <ol>
+            <li>
+               <experience-entry>
+                  <h3>Student Researcher</h3>
+                  <time datetime="2023-04"><i>April 2023&ndash; Present </i></time>
+                  <p>Sonic Arts Research and Development at UC San Diego</p>
+                  <p> Converting fixed beam forming code in <b>MATLAB</b> to adaptive beam forming code in <b>C++</b></p>
+
+                  <ul>
+                     <li><strong> MATLAB </strong></li>
+                     <li><strong> C++ </strong></li>
+                  </ul>
+                  
+                  
+               </experience-entry>
+
+               <a href="experience/">See More Experience</a>
+            </li>
+         </ol>
+
+      </section>
+
+      <hr>
+
+      <section>
+         <h2> Projects</h2>
+         <ol>
+            <li>
+               <project-entry>
+                  <picture>
+                     <img width="300" src="assets/fortune_telling_pic.png" alt="
+                     Screen Capture of a card selection page for a card-based fortune telling app">
+                  </picture>                    
+
+                  <div class="project-content">
+                     <h3>Fortune Telling App</h3>
+                     <p> Designed and developed card-based fortune telling website from scratch with agile team of 10 using
+                        <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b></p>
+
+                     <aside> <p>Coursework Project</p></aside>
+                     <iframe id="fortune-telling-app" title="Fortune Telling App" width="800" height="500"
+                     src="https://cse110-sp23-group4.github.io/cse110-sp23-group4/source/fortune-telling/landing.html">
+
+                     </iframe>
+
+                  </div>
+
+                  <ul>
+                     <li><strong> HTML </strong></li>
+                     <li><strong> CSS </strong></li>
+                     <li><strong> JavaScript </strong></li>
+                  </ul>
+               </project-entry>
+            </li>
+         </ol>
+
+         <a href="projects/">See More Projects</a>
+      </section>
+
+      <hr>
+
+      <section>
+         <h2> Contact Me</h2>
+         <form>
+            <form-field>
+               <label for="name">Name</label>
+               <input type="text" name="name" id="name" required>
+            </form-field>
+
+            <form-field>
+               <label for="email">Email</label>
+               <input type="text" name="email" id="email" required>
+            </form-field>
+
+            <form-field>
+               <label for="message">Leave a message</label>
+               <textarea name="message" id="message"> </textarea>
+            </form-field>
+
+            <button> Submit</button>
+         </form>
+      </section>
+
+      <section>
+         <h2>Experimentation</h2>
+         <details open>
+            <summary> Labs </summary>
+
+            Ever get frustrated with whitespace not rendering? Well  <code> &lt; pre &gt;</code> is here to help
+
+            <pre>
+               It takes in P R E F O R M A T T E D 
+                        text
+                  and renders it as is. 
+            </pre>
+
+            <video controls autoplay>
+               <source src="assets/video_preview_h264.mp4" type="video/mp4">
+
+               Download the <a href="assets/video_preview_h264.mp4">MP4</a>
+            </video>
+
+            <figure>
+               <figcaption>Let us listen to some rain</figcaption>
+               <audio controls src="assets/soft-rain-ambient-111154.mp3">
+                  <a href="assets/soft-rain-ambient-111154.mp3"> Download the rain sound</a>
+               </audio>
+            </figure>
+
+            <form>
+               <fieldset>
+                  <legend>Choose your year:</legend>
+   
+                  <input type="radio" id="first-year">
+                  <label for="first-year">First Year</label>
+   
+                  <input type="radio" id="second-year">
+                  <label for="second-year">Second Year</label>
+   
+                  <input type="radio" id="third-year">
+                  <label for="third-year">Third Year</label>
+   
+                  <input type="radio" id="fourth-year">
+                  <label for="fourth-year">Fourth Year</label>
+               </fieldset>
+
+               <label for="college">Which college are you in?</label>
+               <input list="college-list" id="college" name="college">
+               <datalist id="college-list">
+                  <option value="Revelle">
+                  <option value="Muir">
+                  <option value="Marshall">
+                  <option value="Warren">
+                  <option value="Roosevelt">
+                  <option value="Sixth">
+                  <option value="Seventh">
+                  <option value="Eighth">
+               </datalist>
+
+               <label for="favorite-subject">Choose Your Favorite Subject:</label>
+               <select name="favorite-subject" id="favorite-subject">
+                  <optgroup label="Humanities ">
+                     <option> English </option>
+                     <option> History </option>
+                     <option> Art </option>
+                     <option> Philosophy </option>
+                     <option> Geography </option>
+                     <option> Psychology </option>
+                  </optgroup>
+
+                  <optgroup label="STEM">
+                     <option> Biology </option>
+                     <option> Math </option>
+                     <option> Physics </option>
+                     <option> Engineering </option>
+                     <option> Computer Science </option>
+                     <option> Chemistry </option>
+                  </optgroup>
+               </select>
+            </form>
+
+            <table id="project-keywords">
+               <caption>Programming Languages and Technologies used in Experience and projects</caption>
+               <colgroup>
+                  <col class="project-experience">
+                  <col class="html">
+                  <col class="css">
+                  <col class="javascript">
+                  <col class="matlab">
+                  <col class="c++">
+               </colgroup>
+               <thead>
+                  <tr>
+                     <td> Project/Experience </td>
+                     <td> HTML </td>
+                     <td> CSS </td>
+                     <td> JavaScript </td>
+                     <td> Matlab </td>
+                     <td> C++ </td>
+                  </tr>
+               </thead>
+
+               <tbody>
+                  <tr>
+                     <th scope="row">Student Researcher</th>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td> &#10004; </td>
+                     <td> &#10004; </td>                     
+                  </tr>
+
+                  <tr>
+                     <th scope="row">Fortune Telling App</th>
+                     <td> &#10004; </td>
+                     <td> &#10004; </td>
+                     <td> &#10004; </td>
+                     <td></td>
+                     <td></td>                     
+                  </tr>
+               </tbody>
+            </table>
+
+            <template id="project-experience-row">
+               <tr>
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>                     
+               </tr>
+            </template>
+
+            <canvas>
+               Using HTML tag <code> &lt;canvas&gt;</code> to draw out the logo of the site ("HZL" centered in a light blue circle).
+            </canvas>
+            <script>
+               const canvas = document.querySelector("canvas");
+               const ctx = canvas.getContext("2d");
+
+               // Draw Circle
+               ctx.beginPath();
+               ctx.arc(75,75,50,0,Math.PI*2, true);
+               ctx.fillStyle = "#ADF";
+               ctx.fill();
+
+               //Add Text
+               ctx.fillStyle = "black";
+               ctx.font = "50px serif";
+               ctx.fillText("HZL",30,90);
+            </script> 
+
+         </details>
+
+      </section>
+   </main>
+
+   <footer>
+      <a href="https://github.com/Miyuki-L">Github</a>
+
+      <address>
+         Contact Author:<a href="mailto:zhitinglin@hotmail.com">zhitinglin@hotmail.com</a>
+         <br>
+         Find Bugs? Email: <a href="mailto:zhitinglin@hotmail.com">zhitinglin@hotmail.com</a>
+      </address>
+   </footer>
 </body>
 </html>
