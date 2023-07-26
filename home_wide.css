@@ -1,0 +1,481 @@
+@font-face {
+   font-family: "Bree Serif";
+   src: local("Bree Serif"),
+      local("Bree-Serif"),
+      url('fonts/Bree_Serif/BreeSerif-Regular.ttf') format('truetype');
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "EB Garamond";
+   src: local("EB Garamond"),
+      local("EB-Garamond"),
+      url('fonts/EB_Garamond/static/EBGaramond-Medium.ttf') format('truetype');
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Hind";
+   src: local("Hind"),
+      url('fonts/Hind/Hind-Regular.ttf') format('truetype');
+   font-display: swap;
+}
+
+:root {
+   --background-color:#FAF3F0 ; 
+   --font-color: #28262C;
+   --font-color-light: #FBEFF8; /*not used*/
+   --header-footer-color: #DBC4F0;
+   --accent-color: #FFCACC;  
+   --button-color: hsla(207, 76%, 80%, 1);
+   --button-hover: rgb(129, 193, 246);
+
+   /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+   --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.80rem);
+   --step--1: clamp(0.94rem, calc(0.92rem + 0.11vw), 1.00rem);
+   --step-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+   --step-1: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);
+   --step-2: clamp(1.62rem, calc(1.50rem + 0.58vw), 1.95rem);
+   --step-3: clamp(1.94rem, calc(1.77rem + 0.87vw), 2.44rem);
+   --step-4: clamp(2.33rem, calc(2.08rem + 1.25vw), 3.05rem);
+   --step-5: clamp(2.80rem, calc(2.45rem + 1.77vw), 3.82rem);
+   --step-6: clamp(3.36rem, calc(2.87rem + 2.45vw), 4.77rem);
+   --step-7: clamp(4.03rem, calc(3.36rem + 3.36vw), 5.96rem);
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   font-family: 'Hind', sans-serif;
+}
+
+*:not(a) {
+   color: var(--font-color);
+}
+
+body {
+   background-color: var(--background-color);
+   font-size: var(--step-0);
+}
+
+input, textarea {
+   font-size: var(--step-0);
+}
+main {
+   width : 80%;
+   margin: auto;
+}
+
+ul, ol {
+   list-style-type: none;
+}
+
+header,footer {
+   background-color: var(--header-footer-color);
+   padding: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+   font-family: "EB Garamond", serif;
+}
+
+#menu-icon img {
+   display: none;
+}
+
+#menu-close img {
+   display: none;
+}
+
+/* Header Stylings */
+header {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+header nav {
+   display: flex;
+   flex-wrap: wrap;
+   justify-self: end;
+   align-content: center;
+}
+
+header ul {
+   display: flex;
+   flex-direction: row;
+}
+
+header ul li {
+   margin: 0 1rem;
+}
+
+h2 {
+   font-size: var(--step-4);
+   background-color: var(--accent-color);
+   margin-block-start: 1rem;
+   text-align: center;
+}
+
+h3 {
+   font-size: var(--step-2);
+   font-weight: 400;
+}
+
+svg {
+   animation-duration: 5s;
+   animation-name: spin;
+}
+
+@keyframes spin {
+   from {
+      transform: rotate(0);
+   }
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+
+/* Introduction Stylings */
+#introduction {
+   background-color: var(--accent-color);
+   margin: 2rem 0;
+   padding: 2rem;
+
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: repeat(3, auto);
+   grid-template-areas: 
+      "name profile-pic"
+      "intro profile-pic"
+      "links profile-pic";
+
+   place-items: center;
+}
+
+#introduction > * {
+   margin: 1rem;
+}
+
+
+h1 {
+   font-family: "Bree Serif", serif;
+   font-size: var(--step-7);
+   font-weight: bold;
+   grid-area: name;
+}
+
+#introduction > p {
+   font-size: var(--step-2);
+   text-align: center;
+   grid-area: intro;
+}
+
+#introduction div {
+   grid-area: links;
+}
+
+#introduction a {
+   margin: 1rem;
+   white-space: nowrap;
+   display:inline-block
+}
+
+#introduction picture {
+   grid-area: profile-pic;
+   justify-self: end;
+}
+
+#introduction img {
+   width:90%;
+}
+
+/* Introduction and Form Shared Styling */
+#introduction a, form button {
+   font-size: var(--step-1);
+   background-color:var(--button-color);
+   padding: 0.5rem 1rem;
+   border-radius: 0.75rem;
+
+   transition: background-color 0.6s ;
+}
+
+#introduction a:hover, form button:hover {
+   background-color: var(--button-hover);
+}
+
+
+/* Experience and Project Intro Section Shared Stylings */
+experience-keywords ul, project-entry ul {
+   grid-area: keywords;
+   display: flex;
+   flex-direction: row;
+}
+
+experience-keywords ul li, project-entry ul li {
+   margin-inline-end: 1rem;
+   background-color: #D4E2D4;
+   padding: 0.25rem 0.5rem;
+   border-radius: 0.5rem;
+}
+
+#projects > ol, #experience > ol {
+   margin-inline-start: 2rem;   
+   margin-block-end: 2rem
+}
+
+experience-employer, project-title {
+   margin-block-end: 0.5rem;
+}
+
+#experience > h2, #projects > h2 {
+   margin-block-end: 1rem;
+}
+
+#experience > a, #projects > a {
+   display: flex;
+   justify-content: center;
+   font-size: var(--step-1);
+}
+
+/* Experience Intro Section */
+
+experience-entry {
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   grid-template-rows: repeat(4, auto);
+   grid-template-areas: 
+      "role date"
+      "company date"
+      "description description"
+      "keywords keywords";
+}
+
+experience-role{
+   grid-area: role;
+}
+
+experience-employer {
+   grid-area: company;
+   margin-block-end: 0.5rem;
+}
+
+experience-description {
+   grid-area: description;
+}
+
+experience-date {
+   grid-area: date;
+   justify-self: end;
+}
+
+experience-keywords ul {
+   grid-area: keywords;
+}
+
+experience-employer, experience-date {
+   font-size: var(--step--1);
+}
+
+/* Projects Intro Section */
+project-entry {
+   display: grid;
+   grid-template-columns: 1.5fr 1fr;
+   grid-template-rows: repeat(3, auto);
+   grid-template-areas: 
+   " project-title thumbnail"
+   " project-description thumbnail"
+   " project-keywords thumbnail";
+
+}
+
+project-title{
+   grid-area: project-title;
+}
+
+project-thumbnail {
+   grid-area: thumbnail;
+   justify-self: end;
+}
+
+project-thumbnail img {
+   width: 100%;
+}
+
+project-description {
+   grid-area: project-description;
+}
+
+project-keywords {
+   grid-area: project-keywords;
+}
+
+/* Contact Section */
+form {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: repeat(4, auto);
+   grid-template-areas: 
+   "first-name last-name"
+   "email email"
+   "message message"
+   "submit submit";
+}
+
+form-field {
+   display: flex;
+   flex-direction: column;
+   margin: 0.5em;
+}
+
+form-field input {
+   padding: 5px;
+}
+
+form-field:nth-child(1) {
+   grid-area: first-name;
+}
+
+form-field:nth-child(2) {
+   grid-area: last-name;
+}
+
+form-field:nth-child(3) {
+   grid-area: email;
+}
+
+form-field:nth-child(4) {
+   grid-area: message;
+}
+
+form button {
+   grid-area: submit;
+   border: transparent;
+   margin: 1rem 0.5rem;
+   /* Has shared styling rule with elements in #introduction */
+}
+
+/* Footer Section */
+footer {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+/* Tablet Responsive Design */
+@media screen and (max-width: 769px){
+   main {
+      width : 90%;
+   }
+
+
+   /* Introduction Styles Tablets */
+   #introduction {
+      grid-template-areas: 
+         "name name"
+         "intro profile-pic"
+         "links links";
+   }
+
+}  
+
+@media screen and (max-width: 480px) {
+   #menu-icon img {
+      display: inline;
+   }
+   
+   #menu-close img {
+      display: inline;
+   } 
+   /* Introduction Styles Mobiles */
+   #introduction {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas: 
+         "name"
+         "profile-pic"
+         "intro "
+         "links";
+   }
+
+   #introduction a {
+      margin: 1rem;
+      white-space: nowrap;
+      display:inline-block;;
+   }
+
+   #introduction picture {
+      align-self: center;
+      justify-self: center;
+   }
+
+   /* Projects Intro Mobile */
+   project-entry {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas: 
+      " thumbnail"
+      " project-title"
+      " project-description"
+      " project-keywords";
+   }
+
+   /* Contact Section */
+   form {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: 
+      "first-name"
+      "last-name"
+      "email "
+      "message "
+      "submit ";
+   }
+
+   footer {
+      display: grid;
+      grid-template-columns:  1fr;
+   }
+
+   #menu-icon img {
+      z-index: 1;      /* 1 so that it is below the pop up nav */
+      position: absolute;
+      right: 0.5rem;
+   }
+   
+   #menu-close img {
+      position: absolute;
+      right: 0.5rem;
+      z-index: 2;
+   }
+   
+   nav {
+      position: absolute;
+      z-index: 2;             /* 2 is above the menu icon */
+      left: 0;
+      width: 100%;
+   
+      /* Move Navbar out of site */
+      transition:  0.2s ease transform;
+      transform: translateY(-100%);
+   }
+
+   nav ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: var(--header-footer-color);
+      padding-block-start: 2rem;
+      padding-block-end: 2rem;
+   }
+
+   nav:target {
+      transform: translateY(0%);
+   }
+
+   nav ul li{
+      margin: 1rem 0;
+   }
+
+}
