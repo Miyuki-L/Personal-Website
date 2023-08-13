@@ -21,14 +21,16 @@
    font-display: swap;
 }
 
+
+/* logo fill is #ADF, font is EB Ga, outline is #177399 */
 :root {
    --background-color:#FAF3F0 ; 
    --font-color: #28262C;
    --font-color-light: #FBEFF8; /*not used*/
    --header-footer-color: #DBC4F0;
    --accent-color: #FFCACC;  
-   --button-color: hsla(207, 76%, 80%, 1);
-   --button-hover: rgb(129, 193, 246);
+   --button-color: #a5d0f3;
+   --button-hover: #81c1f6;
 
    /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
    --step--2: clamp(0.78rem, calc(0.77rem + 0.03vw), 0.80rem);
@@ -72,7 +74,6 @@ ul, ol {
 
 header,footer {
    background-color: var(--header-footer-color);
-   padding: 1rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -91,6 +92,9 @@ h1, h2, h3, h4, h5, h6 {
 header {
    display: grid;
    grid-template-columns: 1fr 1fr;
+   position: sticky;
+   top: 0;
+   padding: 1rem;
 }
 
 header nav {
@@ -119,20 +123,6 @@ h2 {
 h3 {
    font-size: var(--step-2);
    font-weight: 400;
-}
-
-svg {
-   animation-duration: 5s;
-   animation-name: spin;
-}
-
-@keyframes spin {
-   from {
-      transform: rotate(0);
-   }
-   to {
-      transform: rotate(360deg);
-   }
 }
 
 
@@ -196,7 +186,7 @@ h1 {
    background-color:var(--button-color);
    padding: 0.5rem 1rem;
    border-radius: 0.75rem;
-
+   border: 3px solid #177399;
    transition: background-color 0.6s ;
 }
 
@@ -285,6 +275,7 @@ project-entry {
    grid-template-areas: 
    " project-title thumbnail"
    " project-description thumbnail"
+   " project-source thumbnail"
    " project-keywords thumbnail";
 
 }
@@ -304,6 +295,10 @@ project-thumbnail img {
 
 project-description {
    grid-area: project-description;
+}
+
+project-source {
+   grid-area: project-source;
 }
 
 project-keywords {
@@ -350,7 +345,6 @@ form-field:nth-child(4) {
 
 form button {
    grid-area: submit;
-   border: transparent;
    margin: 1rem 0.5rem;
    /* Has shared styling rule with elements in #introduction */
 }
@@ -359,6 +353,7 @@ form button {
 footer {
    display: grid;
    grid-template-columns: 1fr 1fr;
+   padding: 0.5rem
 }
 
 /* Tablet Responsive Design */

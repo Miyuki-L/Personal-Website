@@ -4,23 +4,17 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Helen Lin</title>
-   <link rel="icon" href="assets/favicon.ico">
+   <link rel="icon" href="assets/favicon/favicon.ico">
    <link rel="stylesheet" media="screen" href="home_wide.css">
-   <style>
-      th,td {
-         border: 1px solid black;
-      }
-   </style>
 </head>
 <body>
    <header>
-      <svg width="3.2em" height="3.2em">
-
+      <!-- <svg width="3.0em" height="3.0em">=
          <circle cx="1.6em" cy="1.6em" r="1.5em" fill="#ADF"/>
-
          <text x="1.1em" y="1.4em" font-size="1.5em" text-anchor="middle" fill="black">HZL</text>
+      </svg> -->
 
-      </svg>
+      <img src="assets/logo.png" alt="logo of website">
 
       <nav id="navbar">
          <ul>
@@ -34,6 +28,7 @@
             <img src="assets/close.svg" alt="close icon">
          </a>
       </nav>
+
       <a href="#navbar" id="menu-icon">
          <img src="assets/hamburger.svg" alt="hamburger menu icon">
       </a>
@@ -47,9 +42,7 @@
 
          <div>
             <a href="about/"> About Me</a>
-               
             <a href="resume.pdf"> View Resume </a>
-
          </div>
 
             <picture>
@@ -109,7 +102,7 @@
                      </picture>                    
                   </project-thumbnail>
                   <project-title>
-                     <h3><a href="https://github.com/cse110-sp23-group4/cse110-sp23-group4">
+                     <h3><a href="https://cse110-sp23-group4.github.io/cse110-sp23-group4/source/fortune-telling/landing.html">
                         Fortune Telling App
                      </a></h3>
                   </project-title>
@@ -118,6 +111,10 @@
                      <p> Designed and developed card-based fortune telling website from scratch with agile team of 10 using
                         <b>HTML</b>, <b>CSS</b>, and <b>JavaScript</b></p>
                   </project-description>
+
+                  <project-source>
+                     <a href="https://github.com/cse110-sp23-group4/cse110-sp23-group4">Source Code</a>
+                  </project-source>
 
                   <project-keywords>
                   <ul>
@@ -151,7 +148,7 @@
 
             <form-field>
                <label for="email-field">Email</label>
-               <input type="text" name="email" id="email-field" required>
+               <input type="email" name="email" id="email-field" required>
             </form-field>
 
             <form-field>
@@ -159,7 +156,7 @@
                <textarea name="message" id="message-field"> </textarea>
             </form-field>
 
-            <button> Submit</button>
+            <button type="submit"> Submit</button>
          </form>
       </section>
 
